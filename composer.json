@@ -2,7 +2,6 @@
     "name": "oiuv/talkfunsdk",
     "description": "欢拓云直播WEB API",
     "type": "library",
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.6"
     },

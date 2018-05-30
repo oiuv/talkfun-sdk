@@ -118,6 +118,12 @@ class MTCloud
 
     public function __construct($openID = '', $openToken = '')
     {
+        //todo Laravel中默认通过配置文件读取
+        //if (function_exists('config')) {
+        //    $this->openID = config('talkfun.openId');
+        //    $this->openToken = config('talkfun.openToken');
+        //}
+
         if ($openID) {
             $this->openID = trim($openID);
         }
@@ -2864,6 +2870,7 @@ class MTCloud
      * @param   string $url 上传地址
      * @param   array $data 参数
      * @param   array $fileDatas 文件信息
+     * @return bool|mixed|string
      */
     public function uploadFileData($url, $postData = array(), $fileDatas = array())
     {

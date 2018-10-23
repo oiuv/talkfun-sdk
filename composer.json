@@ -1,5 +1,5 @@
 {
-    "name": "oiuv/talkfunsdk",
+    "name": "oiuv/talkfun-sdk",
     "description": "欢拓云直播WEB API",
     "type": "library",
     "require": {
@@ -15,7 +15,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Xuefeng",
+            "name": "oiuv",
             "email": "i@oiuv.cn"
         }
     ]

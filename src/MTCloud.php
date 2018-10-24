@@ -24,27 +24,25 @@ use CURLFile;
  */
 class MTCloud
 {
-    //!!!!注意：$openID 以及 $openToken 请咨询欢拓技术人员进行获取。
-
-    /*
-    *  合作方ID：欢拓平台的唯一ID
-    */
+    /**
+     *  合作方ID：欢拓平台的唯一ID.
+     */
     private $openID = '';
 
-    /*
-    *  合作方秘钥：欢拓平台唯一ID对应的加密秘钥
-    */
+    /**
+     *  合作方秘钥：欢拓平台唯一ID对应的加密秘钥.
+     */
     private $openToken = '';
 
-    /*
-    *   欢拓API接口地址
-    */
+    /**
+     *   欢拓API接口地址
+     */
     private $restUrl = 'http://api.talk-fun.com/portal.php';
     private $restUrl2 = 'http://api-1.talk-fun.com/portal.php';
 
-    /*
-    *   接口访问curl超时时间
-    */
+    /**
+     *   接口访问curl超时时间.
+     */
     private $timeout = 10;
 
     /**
@@ -62,8 +60,8 @@ class MTCloud
      */
     private $callbackHandler = null;
 
-    /*
-     *  API参数
+    /**
+     *  API参数.
      */
     private $requestParam;
 
@@ -126,18 +124,19 @@ class MTCloud
     const LIVE_ALBUM_TYPE_SYSTEM = 10;          //系统专辑
     const LIVE_ALBUM_TYPE_SYSTEM_CONCAT = 11;   //系统专辑 合并播放
 
+    /**
+     * MTCloud constructor.
+     *
+     * @param array $config
+     */
     public function __construct($config)
     {
-        if ($config['openID']) {
+        if (isset($config['openID'])) {
             $this->openID = trim($config['openID']);
         }
 
-        if ($config['openToken']) {
+        if (isset($config['openToken'])) {
             $this->openToken = trim($config['openToken']);
-        }
-
-        if ($config['format']) {
-            $this->format = trim($config['format']);
         }
     }
 
@@ -2493,7 +2492,7 @@ class MTCloud
     /**
      *  修改主播头像.
      *
-     * @param string   $account  接入方自己的主播唯一ID
+     * @param string $account  接入方自己的主播唯一ID
      * @param string $filename 图片路径(支持图片格式:jpg、jpeg)
      *
      * @return array

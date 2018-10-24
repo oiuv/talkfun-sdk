@@ -153,12 +153,12 @@ class MTCloud
     /**
      *   获取用户access_token,access_key,及房间地址(替代roomGetUrl 方法).
      *
-     * @param string $uid      合作方的用户ID
-     * @param string $nickname 合作方用户的名称
-     * @param string $role     用户角色
-     * @param string $roomid   进入的房间ID
-     * @param int    $expire   有效期
-     * @param array  $options  可选项，包括： gender:用户性别 , avatar:用户头像, gid:分组
+     * @param string|int $uid      合作方的用户ID
+     * @param string     $nickname 合作方用户的名称
+     * @param string     $role     定义的角色(user/admin/guest/watch，分别对应普通用户/管理员(助教)/游客/直播监课)
+     * @param string|int $roomid   进入的房间ID
+     * @param int        $expire   链接有效期，单位：秒(默认3600秒)
+     * @param array      $options  可选项，包括： gender:用户性别 , avatar:用户头像, gid:分组等
      *
      * @return array
      */
@@ -180,7 +180,7 @@ class MTCloud
      *
      * @param string $uid      合作方的用户ID
      * @param string $nickname 合作方用户的名称
-     * @param string $role     用户角色
+     * @param string $role     用户角色(user/admin/guest，分别对应普通用户/管理员(助教)/游客)
      * @param string $liveid   直播ID
      * @param int    $expire   有效期
      * @param array  $options  可选项，包括： gender:用户性别 , avatar:用户头像

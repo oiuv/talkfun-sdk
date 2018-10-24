@@ -33,8 +33,8 @@ $res = $MTCloud->userAccessUrl(7300637,'雪风小哥哥','user',123456);
 
 ```
 
-| 方法列表 | 
-| --- | 
+| [方法列表](http://open.talk-fun.com/docs/api/user.html) |
+| --- |
 |  setFormat()
 |  userAccess()
 |  userAccessPlayback()
@@ -212,4 +212,4 @@ $res = $MTCloud->userAccessUrl(7300637,'雪风小哥哥','user',123456);
 |  generateGuestId()
 |  base64UrlEncode()
 
-> 接口文档：[欢拓云直播SDK](https://open.talk-fun.com/docs/getstart/index.html)
+> 接口文档：[欢拓云直播接入指南](https://open.talk-fun.com/docs/getstart/index.html)

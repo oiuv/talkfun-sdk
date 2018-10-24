@@ -14,7 +14,7 @@ namespace Oiuv\TalkFunSdk;
 #     FileName: MTCloud.php
 #         Desc: 欢拓开放API PHP SDK
 #   LastChange: 2018-10-20 20:10:30
-#      Version: 1.4.1
+#      Version: 1.4.2
 =============================================================================*/
 
 use CURLFile;
@@ -135,6 +135,10 @@ class MTCloud
         if ($config['openToken']) {
             $this->openToken = trim($config['openToken']);
         }
+
+        if ($config['format']) {
+            $this->format = trim($config['format']);
+        }
     }
 
     /**
@@ -228,7 +232,7 @@ class MTCloud
      *
      * @return string
      */
-    public function userAccessKey($uid, $nickname, $role, $roomid, $expire = 3600, $options = [])
+    public function userAccessKey($uid, $nickname, $role, $roomid, $expire, $options = [])
     {
         $params = [
             'openID' => trim($this->openID),
@@ -258,7 +262,7 @@ class MTCloud
      *
      * @return string
      */
-    public function userAccessPlaybackUrl($uid, $nickname, $role, $liveid, $expire, $options = [])
+    public function userAccessPlaybackUrl($uid, $nickname, $role, $liveid, $expire = 3600, $options = [])
     {
         $accessAuth = $this->userAccessPlaybackKey($uid, $nickname, $role, $liveid, $expire, $options);
 
@@ -307,7 +311,7 @@ class MTCloud
      *
      * @return array
      */
-    public function userAccessPlaybackAlbum($uid, $nickname, $role, $album_id, $expire, $options = [])
+    public function userAccessPlaybackAlbum($uid, $nickname, $role, $album_id, $expire = 3600, $options = [])
     {
         $params = [
             'uid' => $uid,
@@ -330,9 +334,9 @@ class MTCloud
      * @param int    $expire   有效期
      * @param array  $options  可选项，包括： gender:用户性别 , avatar:用户头像
      *
-     * @return array|string
+     * @return string
      */
-    public function userAccessPlaybackAlbumUrl($uid, $nickname, $role, $album_id, $expire, $options = [])
+    public function userAccessPlaybackAlbumUrl($uid, $nickname, $role, $album_id, $expire = 3600, $options = [])
     {
         $accessAuth = $this->userAccessPlaybackAlbumKey($uid, $nickname, $role, $album_id, $expire, $options);
 
@@ -381,7 +385,7 @@ class MTCloud
      *
      * @return array
      */
-    public function userAccessPlaybackClip($uid, $nickname, $role, $clipid, $expire, $options = [])
+    public function userAccessPlaybackClip($uid, $nickname, $role, $clipid, $expire = 3600, $options = [])
     {
         $params = [
             'uid' => $uid,
@@ -404,9 +408,9 @@ class MTCloud
      * @param int    $expire   有效期
      * @param array  $options  可选项，包括： gender:用户性别 , avatar:用户头像
      *
-     * @return array | string
+     * @return string
      */
-    public function userAccessPlaybackClipUrl($uid, $nickname, $role, $clipid, $expire, $options = [])
+    public function userAccessPlaybackClipUrl($uid, $nickname, $role, $clipid, $expire = 3600, $options = [])
     {
         $accessAuth = $this->userAccessPlaybackClipKey($uid, $nickname, $role, $clipid, $expire, $options);
 
@@ -2490,7 +2494,7 @@ class MTCloud
      *  修改主播头像.
      *
      * @param string   $account  接入方自己的主播唯一ID
-     * @param CURLFile $filename 图片路径(支持图片格式:jpg、jpeg)
+     * @param string $filename 图片路径(支持图片格式:jpg、jpeg)
      *
      * @return array
      *

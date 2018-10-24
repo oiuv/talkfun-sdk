@@ -33,4 +33,4 @@ $res = $MTCloud->userAccessUrl(7300637,'雪风小哥哥','user',123456);
 
 ```
 
-> 接口文档：[欢拓云直播SDK](https://open.talk-fun.com/docs/getstartV2/document.html)
+> 接口文档：[欢拓云直播SDK](https://open.talk-fun.com/docs/getstart/index.html)

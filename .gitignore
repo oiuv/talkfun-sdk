@@ -1,7 +1,7 @@
 /.idea
 /coverage
 /vendor
-.php_cs.cache
+*.cache
 .subsplit
 *.DS_Store
 composer.lock

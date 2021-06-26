@@ -18,18 +18,31 @@ $config = [
 
 $MTCloud = new MTCloud($config);
 
-//获取一个直播专辑
-$res = $MTCloud->albumGet(123456);
+// 获取房间列表
+$res = $MTCloud->roomList();
 
-//获取剪辑信息
-$res = $MTCloud->clipGet(123456);
-
-//获取剪辑列表
+// 获取剪辑列表
 $res = $MTCloud->clipList();
 
-//获取直播间地址
-$res = $MTCloud->userAccessUrl(7300637,'雪风小哥哥','user',123456);
+// 获取最新的几个直播记录
+$res = $MTCloud->liveGetLast();
 
+// 根据房间ID获取主播登录地址
+$res = $MTCloud->roomLogin($roomid);
+
+// 获取一个直播专辑
+$res = $MTCloud->albumGet($albumid);
+
+// 获取剪辑信息
+$res = $MTCloud->clipGet($clipid);
+
+// 获取某场直播的记录信息及回放地址
+$res = $MTCloud->liveGet($liveid);
+
+// 根据直播id获取回放视频
+$res = $MTCloud->livePlaybackVideo($liveid);
+
+// 更多方法请见接口文档：https://api.oiuv.cn/MTCloud/Oiuv/TalkFunSdk/MTCloud.html
 ```
 ## 接口文档
 

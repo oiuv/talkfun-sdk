@@ -3194,15 +3194,18 @@ class MTCloud
     }
 
     /**
-     *  根据课程ID获取被禁言的用户列表
+     *  根据课程ID获取被禁言的用户列表.
+     *
      *  @param  string      $course_id         课程id
+     *
      *  @return array
      */
     public function courseChatDisableList($course_id)
     {
-        $params = array(
-            'course_id'=>$course_id,
-        );
+        $params = [
+            'course_id'=> $course_id,
+        ];
+
         return $this->call('course.chat.disable.list', $params);
     }
 
@@ -3285,22 +3288,24 @@ class MTCloud
     }
 
     /**
-     *  获取剪辑列表
-     *  @param Int     $page      页码
-     *  @param Int     $size      条数
-     *  @param Int     $liveid    直播ID
+     *  获取剪辑列表.
+     *
+     *  @param int     $page      页码
+     *  @param int     $size      条数
+     *  @param int     $liveid    直播ID
      *  @param string  $startTime   添加/修改剪辑的时间范围开始点
      *  @param string  $endTime    添加/修改剪辑的时间范围结束点
      */
     public function clipList($page = 1, $size = 10, $liveid = '', $startTime = '', $endTime = '')
     {
-        $params = array(
-            'page'    => $page,
-            'size'    => $size,
-            'liveid'  => $liveid,
+        $params = [
+            'page'      => $page,
+            'size'      => $size,
+            'liveid'    => $liveid,
             'startTime' => $startTime,
-            'endTime' => $endTime
-        );
+            'endTime'   => $endTime,
+        ];
+
         return $this->call('clip.list', $params);
     }
 
@@ -4252,10 +4257,11 @@ class MTCloud
 
     /**
      * 用户踢出封禁
-     * @param  intval $course_id  课程ID
-     * @param  string $uid  用户ID
-     * @param  intval $duration 封禁时长，单位秒，默认3小时
-     * @param  string $ip 封禁的IP，不封IP的话传空字符串
+     *
+     * @param intval $course_id 课程ID
+     * @param string $uid       用户ID
+     * @param intval $duration  封禁时长，单位秒，默认3小时
+     * @param string $ip        封禁的IP，不封IP的话传空字符串
      */
     public function memberBan($course_id, $uid, $duration = 10800, $ip = '')
     {
@@ -4263,67 +4269,79 @@ class MTCloud
             'course_id' => $course_id,
             'uid'       => $uid,
             'duration'  => $duration,
-            'ip'        => $ip
+            'ip'        => $ip,
         ];
+
         return $this->call('member.ban', $params);
     }
 
     /**
      * 用户解封
-     * @param  intval $course_id  课程ID
-     * @param  string $uid  用户ID
-     * @param  string $ip 封禁的IP，不解IP传空字符串
+     *
+     * @param intval $course_id 课程ID
+     * @param string $uid       用户ID
+     * @param string $ip        封禁的IP，不解IP传空字符串
      */
     public function memberFree($course_id, $uid, $ip = '')
     {
         $params = [
             'course_id' => $course_id,
             'uid'       => $uid,
-            'ip'        => $ip
+            'ip'        => $ip,
         ];
+
         return $this->call('member.free', $params);
     }
 
     /**
-     * 点赞记录
-     * @param   intval $course_id 课程ID
-     * @param   intval $page 页码
-     * @param   intval $pageSize 条数
+     * 点赞记录.
+     *
+     * @param intval $course_id 课程ID
+     * @param intval $page      页码
+     * @param intval $pageSize  条数
+     *
      * @return
      */
     public function courseLikeRecord($course_id = 0, $page = 1, $pageSize = 10)
     {
         $params = [
             'course_id' => $course_id,
-            'page' => $page,
+            'page'      => $page,
             'page_size' => $pageSize,
         ];
+
         return $this->call('course.likeRecord', $params);
     }
 
     /**
-    * 点播列表
-    * @param int    $page     页码
-    * @param int    $size     每页数量
-    * @param array  $options  可选参数
-    * @return
-    */
-    public function vodList($page = 1, $size = 10, $options = array())
+     * 点播列表.
+     *
+     * @param int   $page    页码
+     * @param int   $size    每页数量
+     * @param array $options 可选参数
+     *
+     * @return
+     */
+    public function vodList($page = 1, $size = 10, $options = [])
     {
-        $params = array('page'=>$page,'size'=>$size,'options'=>$options);
+        $params = ['page'=>$page, 'size'=>$size, 'options'=>$options];
+
         return $this->call('course.vodList', $params);
     }
 
     /**
-    * 机器人发言
-    * @param int    course_id    课程id
-    * @param string nickname     机器人名称
-    * @param string msg          发言
-    * @return
-    */
+     * 机器人发言
+     *
+     * @param int    course_id    课程id
+     * @param string nickname     机器人名称
+     * @param string msg          发言
+     *
+     * @return
+     */
     public function robotChatSend($course_id = 0, $nickname = '', $msg = '')
     {
-        $params = array('course_id'=>$course_id,'nickname'=>$nickname,'msg'=>$msg);
+        $params = ['course_id'=>$course_id, 'nickname'=>$nickname, 'msg'=>$msg];
+
         return $this->call('course.robotChatSend', $params);
     }
 

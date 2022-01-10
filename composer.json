@@ -14,6 +14,16 @@
             "Oiuv\\TalkFunSdk\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Oiuv\\TalkFunSdk\\ServiceProvider"
+            ],
+        "aliases": {
+            "TalkFun": "Oiuv\\TalkFunSdk\\Facade"
+            }
+        }
+    },
     "license": "MIT",
     "authors": [
         {

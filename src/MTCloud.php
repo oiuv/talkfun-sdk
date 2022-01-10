@@ -48,7 +48,7 @@ class MTCloud
     /**
      * 返回的数据格式.
      */
-    private $format = 'json';               //  json OR xml
+    private $format = 'json';               // json OR xml
 
     /**
      * SDK版本号(请勿修改).
@@ -65,76 +65,86 @@ class MTCloud
      */
     private $requestParam;
 
-    /**
+    /************************
      * 状态码
-     */
-    public const CODE_FAIL = -1;           //失败
-    public const CODE_SUCCESS = 0;         //成功的状态码,返回其它code均为失败
-    public const CODE_PARAM_ERROR = 10;    //参数错误
-    public const CODE_VIDEO_UPLOADED = 1281;  // 视频已上传过
-    public const CODE_VIDEO_SEGMENT_UPLOAD_ERROR = 1282;  //视频分片上传失败
-    public const CODE_SIGN_EXPIRE = 10002; //签名过期
-    public const CODE_SIGN_ERROR = 10003;  //签名验证错误
+     ************************/
 
-    /**
-     * 用户支持的角色.
-     */
-    public const ROLE_USER = 'user';           //普通用户
-    public const ROLE_ADMIN = 'admin';         //管理员，助教
-    public const ROLE_SPADMIN = 'spadmin';     //超级管理员，直播器用
-    public const ROLE_GUEST = 'guest';         //游客
+    public const CODE_FAIL = -1;                            // 失败
+    public const CODE_SUCCESS = 0;                          // 成功的状态码,返回其它code均为失败
+    public const CODE_PARAM_ERROR = 10;                     // 参数错误
+    public const CODE_VIDEO_UPLOADED = 1281;                // 视频已上传过
+    public const CODE_VIDEO_SEGMENT_UPLOAD_ERROR = 1282;    // 视频分片上传失败
+    public const CODE_SIGN_EXPIRE = 10002;                  // 签名过期
+    public const CODE_SIGN_ERROR = 10003;                   // 签名验证错误
 
-    /**
-     * 用户定义.
-     */
-    public const USER_GENDER_UNKNOW = 0;       //未知生物
-    public const USER_GENDER_MALE = 1;         //男性
-    public const USER_GENDER_FEMALE = 2;       //女性
+    /************************
+     * 用户支持的角色
+     ************************/
 
-    /**
-     * 主播账户类型.
-     */
-    public const ACCOUNT_TYPE_MT = 1;       //欢拓账号类型
-    public const ACCOUNT_TYPE_THIRD = 2;       //合作方账号类型
+    public const ROLE_USER = 'user';           // 普通用户
+    public const ROLE_ADMIN = 'admin';         // 管理员，助教
+    public const ROLE_SPADMIN = 'spadmin';     // 超级管理员，直播器用
+    public const ROLE_GUEST = 'guest';         // 游客
 
-    /**
-     * 直播记录常量.
-     */
-    public const LIVE_NO_PLAYBACK = 0;         //没有直播回放的记录
-    public const LIVE_HAS_PLAYBACK = 1;        //有直播回放的记录
+    /************************
+     * 用户定义
+     ************************/
 
-    /**
-     * 语音常量.
-     */
-    public const VOICE_FLOW_CLOUD = 1;         //语音云模式
-    public const VOICE_FLOW_LISTEN_ONLY = 2;   //只听模式
-    public const VOICE_FLOW_AUTO = 2;          //自动模式，已弃用，和VOICE_FLOW_LISTEN_ONLY一样
+    public const USER_GENDER_UNKNOW = 0;       // 未知生物
+    public const USER_GENDER_MALE = 1;         // 男性
+    public const USER_GENDER_FEMALE = 2;       // 女性
 
-    /**
-     * 房间模式常量.
-     */
-    public const ROOM_MODE_VOICE_CLOUD = 1;    //语音云模式
-    public const ROOM_MODE_BIG = 3;            //大班模式
-    public const ROOM_MODE_SMALL = 5;          //小班模式
+    /************************
+     * 主播账户类型
+     ************************/
 
-    /**
-     * 专辑类型.
-     */
-    public const LIVE_ALBUM_TYPE_NORMAL = 0;           //普通专辑
-    public const LIVE_ALBUM_TYPE_NORMAL_CONCAT = 1;    //普通专辑 合并播放
-    public const LIVE_ALBUM_TYPE_SYSTEM = 10;          //系统专辑
-    public const LIVE_ALBUM_TYPE_SYSTEM_CONCAT = 11;   //系统专辑 合并播放
+    public const ACCOUNT_TYPE_MT = 1;          // 欢拓账号类型
+    public const ACCOUNT_TYPE_THIRD = 2;       // 合作方账号类型
 
-    /**
-     * 外部推流分辨率类型.
-     */
+    /************************
+     * 直播记录常量
+     ************************/
+
+    public const LIVE_NO_PLAYBACK = 0;         // 没有直播回放的记录
+    public const LIVE_HAS_PLAYBACK = 1;        // 有直播回放的记录
+
+    /************************
+     * 语音常量
+     ************************/
+
+    public const VOICE_FLOW_CLOUD = 1;         // 语音云模式
+    public const VOICE_FLOW_LISTEN_ONLY = 2;   // 只听模式
+    public const VOICE_FLOW_AUTO = 2;          // 自动模式，已弃用，和VOICE_FLOW_LISTEN_ONLY一样
+
+    /************************
+     * 房间模式常量
+     ************************/
+
+    public const ROOM_MODE_VOICE_CLOUD = 1;    // 语音云模式
+    public const ROOM_MODE_BIG = 3;            // 大班模式
+    public const ROOM_MODE_SMALL = 5;          // 小班模式
+
+    /************************
+     * 专辑类型
+     ************************/
+
+    public const LIVE_ALBUM_TYPE_NORMAL = 0;           // 普通专辑
+    public const LIVE_ALBUM_TYPE_NORMAL_CONCAT = 1;    // 普通专辑 合并播放
+    public const LIVE_ALBUM_TYPE_SYSTEM = 10;          // 系统专辑
+    public const LIVE_ALBUM_TYPE_SYSTEM_CONCAT = 11;   // 系统专辑 合并播放
+
+    /************************
+     * 外部推流分辨率类型
+     ************************/
+
     public const CUSTOM_RTMP_RATIO_4_3 = 1;       // 4:3比例
     public const CUSTOM_RTMP_RATIO_16_9 = 2;      // 16:9比例
 
     /**
      * MTCloud constructor.
      *
-     * @param array $config
+     * @param  array $config
+     * @return void
      */
     public function __construct($config)
     {
@@ -150,7 +160,8 @@ class MTCloud
     /**
      * 设置欢拓数据响应的格式.
      *
-     * @param string $format
+     * @param  string $format
+     * @return void
      */
     public function setFormat($format)
     {
@@ -706,6 +717,8 @@ class MTCloud
      * @param int $course_id 房间ID
      * @param int $page      页码
      * @param int $rows      每页数量
+     *
+     * @return array
      */
     public function courseOnlineNow($course_id, $page = 1, $rows = 100)
     {
@@ -766,6 +779,8 @@ class MTCloud
      * @param string $roomid 房间/频道ID
      * @param string $title  直播标题
      * @param int    $ratio  分辨率比例
+     *
+     * @return array
      */
     public function roomPushRtmpUrl($roomid, $title = '', $ratio = self::CUSTOM_RTMP_RATIO_4_3)
     {
@@ -779,10 +794,12 @@ class MTCloud
     }
 
     /**
-     *  根据房间ID获取主播登录地址
+     * 根据房间ID获取主播登录地址
      *
-     *  @param  string $roomid    房间ID
-     *  @param  array $options    其它可选项，ssl：是否使用https(true为使用，false为不使用)
+     * @param  string $roomid  房间ID
+     * @param  array  $options 其它可选项，ssl：是否使用https(true为使用，false为不使用)
+     *
+     * @return array
      */
     public function roomLogin($roomid, $options = [])
     {
@@ -1131,6 +1148,14 @@ class MTCloud
         return $this->call('jiabin.delete', $params);
     }
 
+    /**
+     * 修改嘉宾头像
+     *
+     * @param int    $jiabin   嘉宾ID
+     * @param string $filename 文件路径
+     *
+     * @return array
+     */
     public function jiabinUpdatePortrait($jiabin, $filename)
     {
         return $this->zhuboUpdatePortrait($jiabin, self::ACCOUNT_TYPE_MT, $filename);
@@ -3180,7 +3205,7 @@ class MTCloud
      * @param int    $page      页码
      * @param int    $size      每页个数
      *
-     * @return
+     * @return array
      */
     public function courseScoreList($course_id, $page = 1, $size = 10)
     {
@@ -3288,13 +3313,15 @@ class MTCloud
     }
 
     /**
-     *  获取剪辑列表.
+     * 获取剪辑列表.
      *
-     *  @param int     $page      页码
-     *  @param int     $size      条数
-     *  @param int     $liveid    直播ID
-     *  @param string  $startTime   添加/修改剪辑的时间范围开始点
-     *  @param string  $endTime    添加/修改剪辑的时间范围结束点
+     * @param int     $page      页码
+     * @param int     $size      条数
+     * @param int     $liveid    直播ID
+     * @param string  $startTime 添加/修改剪辑的时间范围开始点
+     * @param string  $endTime   添加/修改剪辑的时间范围结束点
+     *
+     * @return array
      */
     public function clipList($page = 1, $size = 10, $liveid = '', $startTime = '', $endTime = '')
     {
@@ -3576,6 +3603,8 @@ class MTCloud
      *
      * @param int $page   页码
      * @param int $expire 视频有效期(单位：秒)
+     *
+     * @return array
      */
     public function videoList($page, $expire = 3600)
     {
@@ -3603,6 +3632,8 @@ class MTCloud
      *
      * @param $videoId 视频ID
      * @param $title   视频标题
+     *
+     * @return array
      */
     public function videoUpdate($videoId, $title)
     {
@@ -4045,16 +4076,16 @@ class MTCloud
     }
 
     /**
-     *   获取流量明细.
+     * 获取流量明细.
      *
-     *   @param    string    $date_time   开始日期，格式 Y-m-d
-     *   @param    string    $end_time   结束日期，格式 Y-m-d，如果不传，则默认为开始日期
-     *   @param    int       $vtype      直播或者点播（回放），1直播，2回放，其它值为获取全部
-     *   @param    int       $ctype      当$vtype==2时，点播的类型,11 云点播，其它值为回放，不传则获取所有
-     *   @param    int       $departmentID    部门ID，获取具体部门的统计。0为无部门；传null为流量数据合计；-1为列出所有部门，以及合计
-     *   @param    int       $small      当$vtype==2时，获取小班的回放流量，传1
+     * @param  string    $date_time    开始日期，格式 Y-m-d
+     * @param  string    $end_time     结束日期，格式 Y-m-d，如果不传，则默认为开始日期
+     * @param  int       $vtype        直播或者点播（回放），1直播，2回放，其它值为获取全部
+     * @param  int       $ctype        当$vtype==2时，点播的类型,11 云点播，其它值为回放，不传则获取所有
+     * @param  int       $departmentID 部门ID，获取具体部门的统计。0为无部门；传null为流量数据合计；-1为列出所有部门，以及合计
+     * @param  int       $small        当$vtype==2时，获取小班的回放流量，传1
      *
-     *   @return
+     * @return array
      */
     public function statsFlowList($date_time, $end_time = null, $vtype = 1, $ctype = 0, $departmentID = null, $small = 0)
     {
@@ -4075,11 +4106,11 @@ class MTCloud
     }
 
     /**
-     *   获取流量总计
+     * 获取流量总计
      *
-     *   @param    int       $departmentID    部门ID，获取具体部门的统计，0为无部门，不传为全部
+     * @param  int $departmentID 部门ID，获取具体部门的统计，0为无部门，不传为全部
      *
-     *   @return
+     * @return array
      */
     public function statsFlowExpend($departmentID = null)
     {
@@ -4092,13 +4123,13 @@ class MTCloud
     }
 
     /**
-     *   获取音视频互动时长统计
+     * 获取音视频互动时长统计
      *
-     *   @param    string  start_time 开始日期，格式 Y-m-d，默认为7天前
-     *   @param    string  end_time 开始日期，格式 Y-m-d，默认昨天，开时结束时间跨度不能超过31天
-     *   @param    int  departmentID 部门ID，获取具体部门的统计，不传或传空值，则默认返回总计
+     * @param string start_time   开始日期，格式 Y-m-d，默认为7天前
+     * @param string end_time     开始日期，格式 Y-m-d，默认昨天，开时结束时间跨度不能超过31天
+     * @param int    departmentID 部门ID，获取具体部门的统计，不传或传空值，则默认返回总计
      *
-     *   @return 成功时返回格式：{"code":0,"data":{"1v1":[{"date":"05-08","duration":31},{"date":"05-09","duration":89},...],"1v6":[{"date":"05-08","duration":96},...],"1v16":[{"date":"05-08","duration":96},...],"desktop":[{"date":"05-08","duration":175},...]}}，duration时长单位为分钟
+     * @return array 成功时返回格式：{"code":0,"data":{"1v1":[{"date":"05-08","duration":31},{"date":"05-09","duration":89},...],"1v6":[{"date":"05-08","duration":96},...],"1v16":[{"date":"05-08","duration":96},...],"desktop":[{"date":"05-08","duration":175},...]}}，duration时长单位为分钟
      */
     public function statsRtc($start_time, $end_time = '', $departmentID = 0)
     {
@@ -4140,7 +4171,7 @@ class MTCloud
      * @param int   $course_id 直播id
      * @param array $options   配置
      *
-     * @return
+     * @return array
      */
     public function getLifeConfig($course_id, $options)
     {
@@ -4158,7 +4189,7 @@ class MTCloud
      * @param int    $course_id 直播id
      * @param object $options   配置
      *
-     * @return
+     * @return array
      */
     public function updateLifeConfig($course_id, $options)
     {
@@ -4177,7 +4208,7 @@ class MTCloud
      * @param int $page     页码
      * @param int $pageSize 条数
      *
-     * @return
+     * @return array
      */
     public function courseReward($courseId = 0, $page = 1, $pageSize = 10)
     {
@@ -4197,7 +4228,7 @@ class MTCloud
      * @param int $page     页码
      * @param int $pageSize 条数
      *
-     * @return
+     * @return array
      */
     public function courseHongbaoList($courseId = 0, $page = 1, $pageSize = 10)
     {
@@ -4217,7 +4248,7 @@ class MTCloud
      * @param int $page     页码
      * @param int $pageSize 条数
      *
-     * @return
+     * @return array
      */
     public function courseHongbaoRcvLogs($hid = 0, $page = 1, $pageSize = 10)
     {
@@ -4233,8 +4264,10 @@ class MTCloud
     /**
      * 上传课程封面图.
      *
-     * @param intval $course_id 课程ID
-     * @param file   $filename  图片路径(支持图片格式:jpg、jpeg)
+     * @param int    $course_id 课程ID
+     * @param string $filename  图片路径(支持图片格式:jpg、jpeg)
+     *
+     * @return array
      */
     public function courseThumbUpload($course_id, $filename)
     {
@@ -4262,6 +4295,8 @@ class MTCloud
      * @param string $uid       用户ID
      * @param intval $duration  封禁时长，单位秒，默认3小时
      * @param string $ip        封禁的IP，不封IP的话传空字符串
+     *
+     * @return array
      */
     public function memberBan($course_id, $uid, $duration = 10800, $ip = '')
     {
@@ -4281,6 +4316,8 @@ class MTCloud
      * @param intval $course_id 课程ID
      * @param string $uid       用户ID
      * @param string $ip        封禁的IP，不解IP传空字符串
+     *
+     * @return array
      */
     public function memberFree($course_id, $uid, $ip = '')
     {
@@ -4300,7 +4337,7 @@ class MTCloud
      * @param intval $page      页码
      * @param intval $pageSize  条数
      *
-     * @return
+     * @return array
      */
     public function courseLikeRecord($course_id = 0, $page = 1, $pageSize = 10)
     {
@@ -4320,7 +4357,7 @@ class MTCloud
      * @param int   $size    每页数量
      * @param array $options 可选参数
      *
-     * @return
+     * @return array
      */
     public function vodList($page = 1, $size = 10, $options = [])
     {
@@ -4336,9 +4373,9 @@ class MTCloud
      * @param string nickname     机器人名称
      * @param string msg          发言
      *
-     * @return
+     * @return array
      */
-    public function robotChatSend($course_id = 0, $nickname = '', $msg = '')
+    public function robotChatSend($course_id, $nickname, $msg)
     {
         $params = ['course_id'=>$course_id, 'nickname'=>$nickname, 'msg'=>$msg];
 
@@ -4366,7 +4403,8 @@ class MTCloud
      *   $MTCloud->registerCallbackHandler(array(new ExampleHandler,'handler'));
      *   $MTCloud->callbackService();
      *
-     * @param array $callbackHandler
+     * @param  array $callbackHandler
+     * @return void
      */
     public function registerCallbackHandler($callbackHandler = [])
     {
@@ -4377,6 +4415,7 @@ class MTCloud
      * 回调参数验证、处理，及响应.
      *
      * @throws MTCloudException
+     * @return void
      */
     public function callbackService()
     {
@@ -4401,7 +4440,7 @@ class MTCloud
         self::response($retval);
     }
 
-    public function response($retval)
+    public static function response($retval)
     {
         exit(json_encode($retval));
     }

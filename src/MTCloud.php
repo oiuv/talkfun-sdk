@@ -3245,11 +3245,12 @@ class MTCloud
      */
     public function courseInviteRankList($course_id, $page = 1, $size = 10)
     {
-        $params = array(
+        $params = [
             'course_id' => $course_id,
             'page'      => $page,
-            'size'      => $size
-        );
+            'size'      => $size,
+        ];
+
         return $this->call('course.inviteRankList', $params);
     }
 
@@ -3263,12 +3264,13 @@ class MTCloud
      */
     public function courseInviteRankDetailList($course_id, $xid, $page = 1, $size = 10)
     {
-        $params = array(
+        $params = [
             'course_id' => $course_id,
             'xid'       => $xid,
             'page'      => $page,
-            'size'      => $size
-        );
+            'size'      => $size,
+        ];
+
         return $this->call('course.inviteRankDetailList', $params);
     }
 
@@ -3279,12 +3281,13 @@ class MTCloud
      *
      * @return array
      */
-    public function courseSetPullLive($course_id, $pullUrl = "")
+    public function courseSetPullLive($course_id, $pullUrl = '')
     {
-        $params = array(
+        $params = [
             'course_id' => $course_id,
-            'pullUrl'  => $pullUrl,
-        );
+            'pullUrl'   => $pullUrl,
+        ];
+
         return $this->call('course.setPullLive', $params);
     }
 
@@ -3297,9 +3300,10 @@ class MTCloud
      */
     public function courseGetPullLive($course_id)
     {
-        $params = array(
+        $params = [
             'course_id' => $course_id,
-        );
+        ];
+
         return $this->call('course.getPullLive', $params);
     }
 

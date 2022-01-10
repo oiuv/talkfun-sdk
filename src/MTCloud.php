@@ -143,7 +143,8 @@ class MTCloud
     /**
      * MTCloud constructor.
      *
-     * @param  array $config
+     * @param array $config
+     *
      * @return void
      */
     public function __construct($config)
@@ -160,7 +161,8 @@ class MTCloud
     /**
      * 设置欢拓数据响应的格式.
      *
-     * @param  string $format
+     * @param string $format
+     *
      * @return void
      */
     public function setFormat($format)
@@ -796,8 +798,8 @@ class MTCloud
     /**
      * 根据房间ID获取主播登录地址
      *
-     * @param  string $roomid  房间ID
-     * @param  array  $options 其它可选项，ssl：是否使用https(true为使用，false为不使用)
+     * @param string $roomid  房间ID
+     * @param array  $options 其它可选项，ssl：是否使用https(true为使用，false为不使用)
      *
      * @return array
      */
@@ -1149,7 +1151,7 @@ class MTCloud
     }
 
     /**
-     * 修改嘉宾头像
+     * 修改嘉宾头像.
      *
      * @param int    $jiabin   嘉宾ID
      * @param string $filename 文件路径
@@ -3315,11 +3317,11 @@ class MTCloud
     /**
      * 获取剪辑列表.
      *
-     * @param int     $page      页码
-     * @param int     $size      条数
-     * @param int     $liveid    直播ID
-     * @param string  $startTime 添加/修改剪辑的时间范围开始点
-     * @param string  $endTime   添加/修改剪辑的时间范围结束点
+     * @param int    $page      页码
+     * @param int    $size      条数
+     * @param int    $liveid    直播ID
+     * @param string $startTime 添加/修改剪辑的时间范围开始点
+     * @param string $endTime   添加/修改剪辑的时间范围结束点
      *
      * @return array
      */
@@ -4078,12 +4080,12 @@ class MTCloud
     /**
      * 获取流量明细.
      *
-     * @param  string    $date_time    开始日期，格式 Y-m-d
-     * @param  string    $end_time     结束日期，格式 Y-m-d，如果不传，则默认为开始日期
-     * @param  int       $vtype        直播或者点播（回放），1直播，2回放，其它值为获取全部
-     * @param  int       $ctype        当$vtype==2时，点播的类型,11 云点播，其它值为回放，不传则获取所有
-     * @param  int       $departmentID 部门ID，获取具体部门的统计。0为无部门；传null为流量数据合计；-1为列出所有部门，以及合计
-     * @param  int       $small        当$vtype==2时，获取小班的回放流量，传1
+     * @param string $date_time    开始日期，格式 Y-m-d
+     * @param string $end_time     结束日期，格式 Y-m-d，如果不传，则默认为开始日期
+     * @param int    $vtype        直播或者点播（回放），1直播，2回放，其它值为获取全部
+     * @param int    $ctype        当$vtype==2时，点播的类型,11 云点播，其它值为回放，不传则获取所有
+     * @param int    $departmentID 部门ID，获取具体部门的统计。0为无部门；传null为流量数据合计；-1为列出所有部门，以及合计
+     * @param int    $small        当$vtype==2时，获取小班的回放流量，传1
      *
      * @return array
      */
@@ -4108,7 +4110,7 @@ class MTCloud
     /**
      * 获取流量总计
      *
-     * @param  int $departmentID 部门ID，获取具体部门的统计，0为无部门，不传为全部
+     * @param int $departmentID 部门ID，获取具体部门的统计，0为无部门，不传为全部
      *
      * @return array
      */
@@ -4403,7 +4405,8 @@ class MTCloud
      *   $MTCloud->registerCallbackHandler(array(new ExampleHandler,'handler'));
      *   $MTCloud->callbackService();
      *
-     * @param  array $callbackHandler
+     * @param array $callbackHandler
+     *
      * @return void
      */
     public function registerCallbackHandler($callbackHandler = [])
@@ -4415,6 +4418,7 @@ class MTCloud
      * 回调参数验证、处理，及响应.
      *
      * @throws MTCloudException
+     *
      * @return void
      */
     public function callbackService()

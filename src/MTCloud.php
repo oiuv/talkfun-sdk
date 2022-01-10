@@ -3236,7 +3236,72 @@ class MTCloud
         return $this->call('course.chat.disable.list', $params);
     }
 
-    //add online list
+    /**
+     * 根据课程ID获取生活直播邀请榜单列表.
+     *
+     * @param string $course_id 课程id
+     *
+     * @return array
+     */
+    public function courseInviteRankList($course_id, $page = 1, $size = 10)
+    {
+        $params = array(
+            'course_id' => $course_id,
+            'page'      => $page,
+            'size'      => $size
+        );
+        return $this->call('course.inviteRankList', $params);
+    }
+
+    /**
+     *  根据课程ID、邀请人ID获取生活直播的被邀请人列表.
+     *
+     * @param string $course_id 课程id
+     * @param string $xid       邀请人用户id
+     *
+     * @return array
+     */
+    public function courseInviteRankDetailList($course_id, $xid, $page = 1, $size = 10)
+    {
+        $params = array(
+            'course_id' => $course_id,
+            'xid'       => $xid,
+            'page'      => $page,
+            'size'      => $size
+        );
+        return $this->call('course.inviteRankDetailList', $params);
+    }
+
+    /**
+     *  设置课程拉流转播.
+     *
+     * @param string $course_id 课程id
+     *
+     * @return array
+     */
+    public function courseSetPullLive($course_id, $pullUrl = "")
+    {
+        $params = array(
+            'course_id' => $course_id,
+            'pullUrl'  => $pullUrl,
+        );
+        return $this->call('course.setPullLive', $params);
+    }
+
+    /**
+     *  获取课程拉流转播设置.
+     *
+     * @param string $course_id 课程id
+     *
+     * @return array
+     */
+    public function courseGetPullLive($course_id)
+    {
+        $params = array(
+            'course_id' => $course_id,
+        );
+        return $this->call('course.getPullLive', $params);
+    }
 
     /**
      * 添加剪辑.

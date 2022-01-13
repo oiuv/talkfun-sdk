@@ -19,8 +19,8 @@
             "providers": [
                 "Oiuv\\TalkFunSdk\\ServiceProvider"
             ],
-        "aliases": {
-            "TalkFun": "Oiuv\\TalkFunSdk\\Facade"
+            "aliases": {
+                "TalkFun": "Oiuv\\TalkFunSdk\\Facade"
             }
         }
     },
